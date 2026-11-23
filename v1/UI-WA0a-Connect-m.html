@@ -3,14 +3,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Wallet · connect a wallet · mobile · HypeMan</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&amp;family=Geist:wght@400;500;600;700;800&amp;family=Geist+Mono:wght@400;500;700&amp;display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&amp;family=Geist:wght@400;500;600;700;800&amp;family=Geist+Mono:wght@400;500;700&amp;display=block">
 <style>
 body{margin:0}
 a{color:#1D1224}a:hover{color:#B8410C}
 input{width:100%;box-sizing:border-box;min-width:0}
 </style>
 <style>#pv-bar{position:fixed;left:16px;bottom:16px;z-index:99999;display:flex;gap:6px;font:500 12px/1 'Geist',system-ui,sans-serif}#pv-bar a{display:inline-flex;align-items:center;height:32px;padding:0 12px;border-radius:999px;background:rgba(29,18,36,.88);color:#fff;text-decoration:none;backdrop-filter:blur(8px)}#pv-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:99999;padding:10px 16px;border-radius:999px;background:#1D1224;color:#fff;font:500 13px 'Geist',system-ui,sans-serif;opacity:0;transition:opacity .2s;pointer-events:none}body{margin:0;background:#E9E6EC;display:flex;justify-content:center;min-height:100vh}.pv-frame{box-shadow:0 30px 80px -30px rgba(29,18,36,.35);margin:0 auto}#pv-bar a.on{background:#FF5C16;color:#1D1224}#pv-bar .sup{background:#B8410C}</style>
-<style>[data-on]{box-shadow:inset 0 0 0 2px #1D1224!important}[data-sel]{background:rgba(255,92,22,.08)!important;border-radius:14px}button,a{cursor:pointer}</style></head>
+<style>[data-on]{box-shadow:inset 0 0 0 2px #1D1224!important}[data-sel]{background:rgba(255,92,22,.08)!important;border-radius:14px}button,a{cursor:pointer}</style><style id="hm-smooth">
+@view-transition{navigation:auto}
+::view-transition-old(root),::view-transition-new(root){animation-duration:180ms;animation-timing-function:ease-out}
+aside:has(nav[aria-label="Main"]){view-transition-name:hm-rail}
+nav[aria-label="Main"]:not(aside nav){view-transition-name:hm-tabbar}
+#pv-bar{view-transition-name:hm-pvbar}
+::view-transition-group(hm-rail),::view-transition-group(hm-tabbar),::view-transition-group(hm-pvbar){animation-duration:0s}
+::view-transition-old(hm-rail),::view-transition-new(hm-rail),::view-transition-old(hm-tabbar),::view-transition-new(hm-tabbar){animation-duration:140ms}
+::view-transition-old(hm-pvbar),::view-transition-new(hm-pvbar){animation:none}
+@media (prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}}
+</style></head>
 <body>
 <div class="pv-frame"><div style="position: relative; width: 390px; height: 1034px; overflow: hidden; box-sizing: border-box; background: #FFFFFF; color: #1D1224; font-family: 'Geist', system-ui, sans-serif; font-size: 15px; line-height: 1.5; font-weight: 400; letter-spacing: 0">
 <div id="flow" style="height: 1000px"></div><div aria-hidden="true" inert="" data-backdrop="real-page" style="position: absolute; inset: 0; overflow: hidden; pointer-events: none; user-select: none"><div style="position: relative; width: 390px; height: 2650px; overflow: hidden; box-sizing: border-box; background: rgb(255, 255, 255); color: rgb(29, 18, 36); font-family: Geist, system-ui, sans-serif; font-size: 15px; line-height: 1.5; font-weight: 400; letter-spacing: 0px; margin: 0px;">

@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Roster · Hype Cards · mobile · HypeMan</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&amp;family=Geist:wght@400;500;600;700;800&amp;family=Geist+Mono:wght@400;500;700&amp;display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&amp;family=Geist:wght@400;500;600;700;800&amp;family=Geist+Mono:wght@400;500;700&amp;display=block">
 <style>
 body{margin:0}
 a{color:#1D1224}a:hover{color:#B8410C}
@@ -22,6 +22,16 @@ a{color:#1D1224}a:hover{color:#B8410C}
 .hc.ros-big dd{color:#fff!important;font-weight:600!important} .hc.ros-big dl>div{border-color:rgba(255,255,255,.12)!important}
 .hc.ros-big .hb-icon{background:rgba(255,255,255,.08)!important;color:#fff!important;outline-color:rgba(255,255,255,.2)!important}
 .hc.ros-big .hb-sec{background:#fff!important;color:#1D1224!important;outline:0!important;font-weight:600!important}
+</style><style id="hm-smooth">
+@view-transition{navigation:auto}
+::view-transition-old(root),::view-transition-new(root){animation-duration:180ms;animation-timing-function:ease-out}
+aside:has(nav[aria-label="Main"]){view-transition-name:hm-rail}
+nav[aria-label="Main"]:not(aside nav){view-transition-name:hm-tabbar}
+#pv-bar{view-transition-name:hm-pvbar}
+::view-transition-group(hm-rail),::view-transition-group(hm-tabbar),::view-transition-group(hm-pvbar){animation-duration:0s}
+::view-transition-old(hm-rail),::view-transition-new(hm-rail),::view-transition-old(hm-tabbar),::view-transition-new(hm-tabbar){animation-duration:140ms}
+::view-transition-old(hm-pvbar),::view-transition-new(hm-pvbar){animation:none}
+@media (prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}}
 </style></head>
 <body>
 <div class="pv-frame"><div style="position: relative; width: 390px; height: 2060px; overflow: hidden; box-sizing: border-box; background: #FFFFFF; color: #1D1224; font-family: 'Geist', system-ui, sans-serif; font-size: 15px; line-height: 1.5; font-weight: 400; letter-spacing: 0">
